@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations & Transform</title>
+    <style>
+        .animation-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .animation-item {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes  bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+            
+        }
+
+
+        .rotate{
+            animation: rotate 2s linear infinite ;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pluse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .slide {
+            animation: slide 2s infinite;
+            background: linear-gradient(135deg, #f6d365, #fda085);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .fade {
+            animation: fade 2s infinite;
+        }   
+
+        @keyframes fade {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .transform-hover{
+            transition: transform 0.3s ease;
+        }
+
+        .transform-hover:hover {
+            transform: scale(1.1) rotate(20deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="animation-demo">
+        <div class="animation-item bounce">Bounce</div>
+        <div class="animation-item rotate">Rotate</div>
+        <div class="animation-item pluse">Pulse</div>
+        <div class="animation-item slide">Pulse</div>
+        <div class="animation-item fade">fade</div>
+        <div class="animation-item transform-hover">Hover Me</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex System</title>
+    <style>
+.flex-container{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.flex-item {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 200px; /* Grow, shrink, and base width */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.flex-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.flex-nav-items{
+    display: flex;
+    gap: 20px;
+}
+
+.flex-nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.flex-nav-item:hover {
+    background-color: #555;
+}
+
+.flex-nav-brand {
+    color: white;
+}
+
+@media screen and (max-width: 750px) {
+    .flex-nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+    .flex-nav-items {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        gap: 10px;
+    }
+    .flex-nav-item {
+        text-align: center; /* Center align text in nav items */
+    
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+    </div>
+
+    <div class="flex-nav">
+        <div class="flex-nav-brand">Brand</div>
+        <div class="flex-nav-items">
+            <div class="flex-nav-item">Home</div>
+            <div class="flex-nav-item">About</div>
+            <div class="flex-nav-item">Services</div>
+            <div class="flex-nav-item">Contact</div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

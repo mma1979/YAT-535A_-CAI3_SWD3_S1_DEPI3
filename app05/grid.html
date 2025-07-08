@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid System</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .grid-item {
+            background-color: #b2b3ba;
+            border: 1px solid #07010c;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            color: #07010c;
+        }
+
+
+        .advanced-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 200px auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .advanced-grid-item {
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .header-Item{
+            grid-column: 1 / -1;
+            background-color: #07010c;
+            color: #b2b3ba;
+            font-size: 2em;
+        }
+
+        .footer-Item{
+            grid-column: 1 / -1;
+            background-color: #7511c7;
+            color: #111b64;
+            font-size: 2em;
+        }
+        .aside-item {
+            grid-row: 2 / 3;
+            background-color: #b2b3ba;
+            color: #07010c;
+        }
+
+        .main-item {
+            grid-row: 2 / 3;
+            background-color: #07010c;
+            color: #b2b3ba;
+        }
+
+        .sidebaritem {
+            grid-row: 2 / 3;
+            background-color: #7511c7;
+            color: #111b64;
+        }
+    </style>
+
+    <style>
+        @media screen and (max-width: 600px) and (orientation: portrait) {
+            .sidebaritem {
+                display: none;
+            }
+
+           .advanced-grid{
+            grid-template-columns: 1fr 3fr;
+           }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="grid-item">Grid Item 1</div>
+        <div class="grid-item">Grid Item 2</div>
+        <div class="grid-item">Grid Item 3</div>
+        <div class="grid-item">Grid Item 4</div>
+        <div class="grid-item">Grid Item 5</div>
+        <div class="grid-item">Grid Item 6</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+        <div class="grid-item">Grid Item 7</div>
+    </div>
+
+
+    <div class="advanced-grid">
+        <div class="advanced-grid-item header-Item">Header</div>
+        <div class="advanced-grid-item aside-item">a side3</div>
+        <div class="advanced-grid-item main-item">main</div>
+        <div class="advanced-grid-item sidebaritem">sidebar</div>
+        <div class="advanced-grid-item footer-Item">Footer</div>
+    </div>
+</body>
+
+</html>
