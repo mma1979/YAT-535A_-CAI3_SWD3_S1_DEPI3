@@ -1,0 +1,63 @@
+
+@use "variables" as *;
+@use "base";
+
+@mixin border-radius($radius: 5px) {
+    border-radius: $radius;
+}
+
+.btn{
+    background-color: $secondary;
+    // color: darken($primary, 20%);
+    color: adjust-color($color: $primary,  $lightness: -50%);
+    
+    @include border-radius;
+
+    &:hover {
+        background-color: lighten($secondary, 10%);
+        @include border-radius(10px);
+    }
+}
+
+.nav{
+    background-color: $primary;
+    color: white;
+    padding: 10px;
+    text-align: center;
+
+    &-items{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline;
+            margin-right: 15px;
+        }
+    }
+
+    &-item {
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }   
+
+    @media (max-width: 600px) {
+        &-items {
+            display: block;
+            text-align: left;
+        }
+
+        &-item {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+    }
+}
+
+
+
