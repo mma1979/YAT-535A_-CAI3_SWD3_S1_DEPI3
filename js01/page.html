@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <input type="text" id="inputText" placeholder="Type something..." class="input-text">
+        <button id="submitButton" type="button" onclick="sayHello()">Say Hello</button>
+        <button id="btn2" type="button">Also Say Hello</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        function sayHello() {
+            var nameInput = document.getElementById('inputText');
+            alert('Hello: ' + nameInput.value);
+        }
+        $(document).ready(function () {
+
+
+            $('#btn2').on('click', function () {
+                var nameInput = $('.input-text');
+                alert('Hello: ' + nameInput.val());
+                nameInput.hide();
+
+            });
+
+        });
+    </script>
+    <!-- <script src="loops.js"></script> -->
+</body>
+
+</html>
